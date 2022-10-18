@@ -1,0 +1,1 @@
+worker: python learn_words_bot.py
