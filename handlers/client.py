@@ -129,4 +129,4 @@ def register_handlers_client(dp: Dispatcher):
     dp.register_message_handler(command_read, commands=["my_words"])
     dp.register_message_handler(command_repeat, commands=["repeat_it"])
     dp.register_message_handler(command_delete, commands=["I_know_it"])
-    dp.register_message_handler(command_translate)
+    dp.register_message_handler(command_translate, regexp=r'\w*')
