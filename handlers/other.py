@@ -15,7 +15,7 @@ def synonyms(term):
 
 def words_by_level(word):
     """Перевірка, до якого рівня англійської належить слово"""
-    with open(r"C:\Python\TelegramBot\Learn_English_by_levels\words_by_levels.json", "r") as file:
+    with open("data_bases/words_by_levels.json", "r") as file:
         words_level = json.load(file)
     for level, words in words_level.items():
         if word in words:
