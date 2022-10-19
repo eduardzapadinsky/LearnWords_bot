@@ -56,8 +56,8 @@ async def button_example_callback(callback: types.CallbackQuery):
 async def command_translate(message: types.Message):
     """Команди для перекладу"""
     global translated_message
-    translated_message = GoogleTranslator(source='auto', target='en').translate(message.text)
-    level = words_by_level(translated_message.lower())
+    translated_message = GoogleTranslator(source='auto', target='en').translate(message.text).lower()
+    level = words_by_level(translated_message)
     cleared_synonyms = synonyms(translated_message)
     if cleared_synonyms and len(cleared_synonyms) >= 3:
         formatted_message_part1 = f"<b><u>{translated_message}</u></b>\n" \
