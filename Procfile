@@ -1,1 +1,1 @@
-web: python learn_words_bot.py
+worker: python learn_words_bot.py
