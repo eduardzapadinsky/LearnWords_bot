@@ -1,0 +1,2 @@
+LearnWords_bot - telegram bot for learning English words. This bot helps to learn and memorize words in your own vocabulary using telegram. The bot parses several websites and provides users with information about input word's meaning, synonyms, level of learning,  pronunciation (sounding), and shows the image concerning this word. Users can save words to memorize. 
+https://t.me/Learn_Words_En_Bot
