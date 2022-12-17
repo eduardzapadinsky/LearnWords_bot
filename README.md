@@ -13,5 +13,5 @@ learn_words_bot.py -> run
 4. Open and work with bot:
 https://t.me/Learn_Words_En_Bot
 5. Enter in telegram:
- /star
+ /start
 
