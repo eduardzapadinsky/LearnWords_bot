@@ -1,7 +1,4 @@
-import os
 import sqlite3 as sq
-import psycopg2 as ps
-import os
 
 from create_bot import bot
 
@@ -9,8 +6,7 @@ from create_bot import bot
 def sql_start():
     """Створення таблиці"""
     global base, curs
-    # base = sq.connect('learn_words.db')
-    base = ps.connect(os.environ.get('DATABASE_URL'), sslmode='require')
+    base = sq.connect('learn_words.db')
     curs = base.cursor()
     if base:
         print('Data base connected OK!')
@@ -43,9 +39,3 @@ def sql_delete(data):
     """Видалення слова користувача з БД"""
     curs.execute('DELETE FROM words_to_study WHERE id == ? AND word == ?', (data['id'], data['word']))
     base.commit()
-
-
-def sql_shutdown():
-    """Безпечний вихід з БД"""
-    curs.close()
-    base.close()
