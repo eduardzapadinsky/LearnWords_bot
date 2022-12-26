@@ -15,3 +15,5 @@ https://t.me/Learn_Words_En_Bot
 5. Enter in telegram:
  /start
 
+![image](https://user-images.githubusercontent.com/111561866/209543189-226b1887-8f4a-46f0-ac2e-7764ae02b7a2.png)
+
