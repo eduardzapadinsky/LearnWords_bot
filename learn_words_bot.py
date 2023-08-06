@@ -7,7 +7,7 @@ from data_bases import sqlite_db
 
 
 async def on_startup(_):
-    print('Бот запущено')
+    print('Bot is running')
     sqlite_db.sql_start()
 
 # async def on_startup(dp):

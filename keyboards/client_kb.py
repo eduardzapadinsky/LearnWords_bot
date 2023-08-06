@@ -1,6 +1,6 @@
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton  # , ReplyKeyboardRemove
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
-# Кнопки клавіатури клієнта
+# Client Keyboard Buttons
 button1 = KeyboardButton("/I_know_it")
 button2 = KeyboardButton("/repeat_it")
 button3 = KeyboardButton("/my_words")
