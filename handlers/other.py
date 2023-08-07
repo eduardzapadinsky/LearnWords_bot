@@ -1,4 +1,6 @@
 import json
+import re
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -47,7 +49,7 @@ def word_example(word: str):
 
     response = requests.get(f'https://www.thesaurus.com/browse/{word}')
     soup = BeautifulSoup(response.text, 'lxml')
-    examples = soup.findAll('div', {'class': 'css-8xzjoe e15rdun50'})
+    examples = soup.findAll('li', {'class': 'VvALg_9aE120lhieur0R'})
     if len(examples) >= 3:
         return [span.text.replace(f'{word}', f"<b>{word}</b>").replace(f'{word.capitalize()}',
                                                                        f"<b>{word.capitalize()}</b>") for span in
@@ -65,10 +67,10 @@ def word_audio(word: str):
 
     response = requests.get(f'https://www.thesaurus.com/browse/{word}')
     soup = BeautifulSoup(response.text, 'lxml')
-    audio = soup.find('audio')
+    audio = soup.find('script', text=re.compile(r'"audio/mpeg":"(.*?)"'))
     if audio:
-        audio = audio.find_all('source')
-        return audio[1].get('src')
+        audio = re.search(r'"audio/mpeg":"(.*?)"', audio.text)
+        return audio.group(1)
 
 
 def word_image(word: str):
